@@ -1,43 +1,46 @@
 [alias]
   adpc = "!git add . && git pick --continue"
   adrc = "!git add . && git rebase --continue"
+  afp = "!git amend && git push -f"
   amend = commit -a --amend --no-edit # amend to the latest commit
+  amend-to = !sh -c 'git stash && git edit $1 && git stash pop && git edit --amend' -
   amendm = commit -a --amend # amend to the latest commit with a new commit message
   br = branch
+  ca = !git add -A && git commit -av # commit all changes
+  ci = commit
+  ciaam = "!git add -A && git ciam"
+  ciam = commit -am
+  cim = commit -m
   clear = "!git reset .; git co .; git clean -f"
-	ca = !git add -A && git commit -av # commit all changes
-  cm = commit
-  cmam = commit -am
-  cmm = commit -m
   co = checkout
   cod = checkout -
-	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f" # credit an author on the latest commit
+  credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f" # credit an author on the latest commit
   diffc = diff --cached
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p" # delete merged branches
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f" # switch to a branch, create and switch if it doesn't exist
   l = log --pretty=format:'%h %Cred%an %C(auto)%ar %Cgreen"%s"' # view abbreviated SHA, author, relative date and message on a single line
+  new = !sh -c 'git checkout -b "lara/$0"'
+  parent-update = "!git co master && git fetch parent && git reset --hard parent/master && git checkout - && git rebase master"
   pick = cherry-pick
   pl = pull
-  pls = "!git pull && git push"
   pls = "!git pull && git push"
 	pr = !"pr() { git fetch origin pull/$1/head:pr-$1; git checkout pr-$1; }; pr" # checkout a GitHub PR from origin
   ps = push
   rbmn = "!git checkout main && git fetch origin && git reset --hard origin/main && git checkout - && git rebase main" # rebase from main
   rbmr = "!git checkout master && git fetch origin && git reset --hard origin/master && git checkout - && git rebase master" # rebase from master
-  rcl = clean -df
   reb = "!r() { git rebase -i HEAD~$1; }; r" # interactive rebase of the last given number of commits
-  request = "!~/dotfiles/bin/git-pull-request"
-  rprn = "!git checkout master && git pull && git remote prune origin && git branch --merged | grep -v '*' | xargs git branch -d && git for-each-ref refs/heads/ '--format=%(refname:short)' | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == '-'* ]] && git branch -D $branch; done"
-  st = status -sb # view the current working tree status branch and tracking info using the short format
+  st = status -sb
   uncommit = reset --soft HEAD^ # undo the last commit
+
+  request = "!~/dotfiles/bin/git-pull-request"
+
 [apply]
-	whitespace = fix # detect whitespace errors when applying a patch
+	whitespace = nowarn # detect whitespace errors when applying a patch
 [branch]
   autosetuprebase = always
 [core]
   excludesfile = ~/.gitignore
 	editor = vim
-	whitespace = space-before-tab,-indent-with-non-tab,trailing-space # treat spaces before tabs and trailing whitespace as an error
 	trustctime = false # <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
 [fetch]
   prune = true
@@ -49,3 +52,7 @@
 	rebase = true
 [push]
   default = current
+[rebase]
+  autoStash = true
+[rerere]
+  enabled = true # store resolved rebase steps even when aborted

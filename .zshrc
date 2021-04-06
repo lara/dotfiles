@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:/usr/bin:$PATH
+export PATH=$HOME/bin:$PATH
 
 source ~/dotfiles/zsh/config.zsh
 source ~/dotfiles/zsh/alias.zsh

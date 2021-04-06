@@ -33,7 +33,6 @@
   uncommit = reset --soft HEAD^ # undo the last commit
 
   request = "!~/dotfiles/bin/git-pull-request"
-
 [apply]
 	whitespace = nowarn # detect whitespace errors when applying a patch
 [branch]

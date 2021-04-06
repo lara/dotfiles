@@ -1,23 +1,17 @@
-export DOTFILES=$HOME/.dotfiles # path to dotfiles
-export ZSH=$HOME/.oh-my-zsh # path to oh-my-zsh installation
-export PROJECTS=~/code # project folder to `c [tab]` to
+export PATH=$HOME/bin:/usr/bin:$PATH
 
-ZSH_CUSTOM=$DOTFILES
+source ~/dotfiles/zsh/config.zsh
+source ~/dotfiles/zsh/alias.zsh
 
-autoload -U compinit; compinit
-autoload -U promptinit; promptinit
-prompt pure
+[ -f ~/dotfiles/secret/env.zsh ] && source ~/dotfiles/secret/env.zsh
 
-plugins=(autojump git zsh-syntax-highlighting)
+# Ruby development
+export RUBY_CONFIGURE_OPTS=--with-openssl-dir=/usr/local/opt/openssl@1.1
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init --no-rehash -)"
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $ZSH/oh-my-zsh.sh
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 
-# Better history
-# Credits to https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey "^[[A" up-line-or-beginning-search # Up
-bindkey "^[[B" down-line-or-beginning-search # Down
+[ -f ~/Code/kubectl_config/dotfiles/kubectl_stuff.bash ] && source ~/Code/kubectl_config/dotfiles/kubectl_stuff.bash
+[ -f ~/Code/dotfiles_n_scripts/shell_scripts/aws-exec.bash ] && source ~/Code/dotfiles_n_scripts/shell_scripts/aws-exec.bash

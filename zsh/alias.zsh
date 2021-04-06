@@ -1,3 +1,6 @@
+alias sz="source ~/.zshrc"
+alias path="tr : '\n' <<<$PATH"
+
 # PS
 alias psa="ps aux"
 alias psg="ps aux | grep "
@@ -20,3 +23,8 @@ alias sgi='sudo gem install --no-ri --no-rdoc'
 
 # Homebrew
 alias bru='brew update && brew upgrade && brew cleanup && brew doctor'
+
+# Kubernetes
+alias k="kubectl --context"
+alias ka="kubectl --as admin --as-group system:masters --context"
+alias s="stern --context"

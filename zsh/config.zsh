@@ -18,6 +18,8 @@ bindkey '^?' backward-delete-char
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_COMPDUMP=$HOME/.cache/zsh/zcompdump
 
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
+
 ZSH_THEME="robbyrussell"
 plugins=(git zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
@@ -26,4 +28,4 @@ autoload -U promptinit; promptinit
 autoload bashcompinit; bashcompinit
 prompt pure
 
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh

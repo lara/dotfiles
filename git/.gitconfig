@@ -34,21 +34,21 @@
 
   request = "!~/dotfiles/bin/git-pull-request"
 [apply]
-	whitespace = nowarn # detect whitespace errors when applying a patch
+  whitespace = nowarn # detect whitespace errors when applying a patch
 [branch]
   autosetuprebase = always
 [core]
   excludesfile = ~/.gitignore
-	editor = vim
-	trustctime = false # <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+  editor = vim
+  trustctime = false # <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
 [fetch]
   prune = true
 [hub]
   protocol = https
 [merge]
-	log = true # include summaries of merged commits in newly created merge commit messages
+  log = true # include summaries of merged commits in newly created merge commit messages
 [pull]
-	rebase = true
+  rebase = true
 [push]
   default = current
 [rebase]

@@ -15,7 +15,7 @@ bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^?' backward-delete-char
 
-export ZSH="/Users/laydin/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 export ZSH_COMPDUMP=$HOME/.cache/zsh/zcompdump
 
 ZSH_THEME="robbyrussell"

@@ -12,6 +12,3 @@ eval "$(rbenv init --no-rehash -)"
 
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
-
-[ -f ~/Code/kubectl_config/dotfiles/kubectl_stuff.bash ] && source ~/Code/kubectl_config/dotfiles/kubectl_stuff.bash
-[ -f ~/Code/dotfiles_n_scripts/shell_scripts/aws-exec.bash ] && source ~/Code/dotfiles_n_scripts/shell_scripts/aws-exec.bash

@@ -34,11 +34,11 @@
 
   request = "!~/dotfiles/bin/git-pull-request"
 [apply]
-  whitespace = nowarn # detect whitespace errors when applying a patch
+  whitespace = nowarn
 [branch]
   autosetuprebase = always
 [core]
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore_global
   editor = vim
   trustctime = false # <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
 [fetch]

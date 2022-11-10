@@ -1,15 +1,19 @@
-# Taps
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "homebrew/core"
-
-# Binaries
+brew "autojump"
+brew "openssl@3"
 brew "pure"
 brew "rbenv"
 brew "zsh-syntax-highlighting"
-
-# Applications
+cask "1password"
+cask "discord"
+cask "firefox"
+cask "font-source-code-pro"
 cask "iterm2"
 cask "maccy"
+cask "obsidian"
 cask "spotify"
 cask "visual-studio-code"
+cask "zoom"

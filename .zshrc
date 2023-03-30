@@ -14,3 +14,10 @@ eval "$(rbenv init --no-rehash -)"
 
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
+
+# Kubernetes
+export KUBECONFIG=~/.kube/config
+export do="-o yaml --dry-run=client"
+export now="--force --grace-period 0"
+
+alias k=kubectl

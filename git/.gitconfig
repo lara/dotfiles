@@ -49,6 +49,7 @@
   log = true # include summaries of merged commits in newly created merge commit messages
 [pull]
   rebase = true
+  prune = true
 [push]
   default = current
 [rebase]

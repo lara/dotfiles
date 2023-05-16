@@ -21,7 +21,7 @@ export ZSH_COMPDUMP=$HOME/.cache/zsh/zcompdump
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
 
 ZSH_THEME="robbyrussell"
-plugins=(git zsh-syntax-highlighting)
+plugins=(git kubectl zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 autoload -U promptinit; promptinit

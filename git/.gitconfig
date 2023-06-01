@@ -5,7 +5,7 @@
   amend = commit -a --amend --no-edit # amend to the latest commit
   amend-to = !sh -c 'git stash && git edit $1 && git stash pop && git edit --amend' -
   amendm = commit -a --amend # amend to the latest commit with a new commit message
-  br = branch
+  br = branch -vv
   ca = !git add -A && git commit -av # commit all changes
   ci = commit
   ciaam = "!git add -A && git ciam"
@@ -56,3 +56,6 @@
   autoStash = true
 [rerere]
   enabled = true # store resolved rebase steps even when aborted
+[user]
+	email = laydin@roblox.com
+	name = Lara Aydin

@@ -27,4 +27,5 @@ alias bru='brew update && brew upgrade && brew cleanup && brew doctor'
 # Kubernetes
 alias k="kubectl --context"
 alias ka="kubectl --as admin --as-group system:masters --context"
+alias ksc="kubectl config set-context"
 alias s="stern --context"

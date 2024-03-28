@@ -31,6 +31,7 @@
   reb = "!r() { git rebase -i HEAD~$1; }; r" # interactive rebase of the last given number of commits
   st = status -sb
   uncommit = reset --soft HEAD^ # undo the last commit
+  trk = "!f() { git branch -r | grep -v '\\->' | sed \"s,\\x1B\\[[0-9;]*[a-zA-Z],,g\" | while read remote; do git branch --track \"\${remote#origin/}\" \"$remote\"; done; }; f"
 
   request = "!~/dotfiles/bin/git-pull-request"
 [apply]
